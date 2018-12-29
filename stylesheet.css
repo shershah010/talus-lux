@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Thasadith');
+
+:root {
+    --gold: #f5b463;
+}
+
+* {
+    font-family: 'Thasadith', sans-serif;
+    font-size: 1.03em;
+    color: white;
+    user-select: none;
+}
+
+html, body, div, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+ul, li {
+    cursor: default;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+section {
+    display: none;
+    padding: 20px 0 0;
+    border-top: 1px solid #888888;
+}
+
+option {
+    color: #000000;
+}
+
+select {
+    color: #000000;
+    margin-left: 50px;
+    display: block;
+}
+
+section h1, section h2 {
+    margin: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="text"],
+input[type="textarea"],
+input[type="number"],
+textarea {
+    margin: 5px;
+    margin-left: 10%;
+    color: #000;
+    display: block;
+}
+
+input[type="submit"] {
+    background-color: var(--gold);
+    margin: 15px;
+    border: none;
+    width: 8em;
+}
+
+input[type="submit"]:hover {
+    background-color: #fbc403;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  text-align: center;
+  color: var(--gold);
+  border: 1px solid transparent;
+}
+
+label:hover {
+  color: #fbc403;
+  cursor: pointer;
+}
+
+.main > input:checked + label {
+  color: var(--gold);
+  border-top: 4px solid var(--gold);
+  border-bottom: 1px solid #ffffff;
+}
+
+/* Panels: */
+.panel {
+  height: 100%;
+}
+
+/* Resizing */
+.resize_x {
+  resize: horizontal;
+  overflow: auto;
+}
+
+/* Panel Colors */
+.aside {
+    background: #151515;
+    width: 25%;
+    border-right: 1px solid #ffffff;
+}
+
+ .roll {
+    background: #101010;
+    width: 15%;
+    border-left: 1px solid #ffffff;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.roll input {
+    width: 100%;
+    margin: 0px;
+    border-width: 0px;
+}
+
+.roll form p {
+    color: var(--gold);
+}
+
+.roll form p:nth-child(1) { opacity: 1.0; }
+.roll form p:nth-child(2) { opacity: 0.8; }
+.roll form p:nth-child(3) { opacity: 0.6; }
+.roll form p:nth-child(4) { opacity: 0.4; }
+.roll form p:nth-child(5) { opacity: 0.2; }
+.roll form p:nth-child(6) { opacity: 0.0; }
+
+.aside_title {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.instrc {
+    text-align: center;
+}
+
+.main {
+    background: #000000;
+}
+
+/* Split View */
+.split_view {
+  width: 100%;
+  clear: both;
+  display: table;
+  height: 100vh;
+}
+
+.split_view .panel {
+  display: table-cell;
+  position: relative
+}
+
+.vhack {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.player {
+    background-color: var(--gold);
+    border-radius: 5px;
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 225, 255, 0.19);
+}
+
+.player:hover {
+    background-color: #fbc403;
+}
+
+.character_sheet {
+    width: 100%;
+}
+
+.show_page {
+    display: block;
+}
+
+.game_list {
+    padding-left: 10px;
+}
+
+.game_list li {
+    margin: 3px;
+    margin-right: 10px;
+}
+
+.game_list li::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 1px;
+    background: #ffffff;
+    transition: width .3s;
+}
+
+.game_list li:hover::after {
+    width: 100%;
+}
+
+.delete {
+    color: var(--gold);
+    font-size: 1em;
+    vertical-align: center;
+    z-index: 2;
+}
+
+.delete:hover {
+    color: #ff0000;
+}
+
+.selected_player, .selected_player:hover {
+    background-color: #cd5c5c;
+}
+
+.new {
+    color: var(--gold);
+    font-size: 1em;
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transform: rotate(45deg);
+}
+
+.new:hover {
+    color: #00ff00;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.main .new {
+    top: 75px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid var(--gold);
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: var(--gold);
+  float: right;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}

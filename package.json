@@ -1,0 +1,19 @@
+{
+    "name": "tales-from-the-loop",
+    "version": "1.0.0",
+    "description": "an application the helps users play DnD or tales from the loop",
+    "main": "index.js",
+    "dependencies": {
+        "electron-builder-squirrel-windows": "^20.38.3"
+    },
+    "devDependencies": {
+        "electron": "^3.0.10",
+        "electron-packager": "^13.0.1"
+    },
+    "scripts": {
+        "start": "electron .",
+        "package-win": "electron-packager . \"talus lux\" --overwrite --platform=win32 --arch=x64 --icon=icon_2.ico --version-string.ProductName=\"talis lux\""
+    },
+    "author": "Sher Shah",
+    "license": "MIT"
+}
