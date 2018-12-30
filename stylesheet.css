@@ -93,7 +93,8 @@ label:hover {
 
 /* Panels: */
 .panel {
-  height: 100%;
+  height: 100vh;
+  overflow: auto;
 }
 
 /* Resizing */
@@ -153,7 +154,6 @@ label:hover {
   width: 100%;
   clear: both;
   display: table;
-  height: 100vh;
 }
 
 .split_view .panel {
@@ -280,7 +280,30 @@ label:hover {
 
 .close:hover,
 .close:focus {
-  color: red;
+  color: #ff0000;
   text-decoration: none;
   cursor: pointer;
+}
+/* Scroll bar properties */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  padding: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+  width: 10px;
+  padding: 0px;
 }
