@@ -7,11 +7,13 @@ function newGameInit() {
 
     window.onclick = function(event) {
         if (event.target == modal) {
+            modal.querySelector("input").value = "";
             modal.style.display = "none";
         }
     }
 
     modal.querySelector(".close").addEventListener("click", function(e) {
+        modal.querySelector("input").value = "";
         modal.style.display = "none";
     });
 
