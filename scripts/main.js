@@ -59,6 +59,9 @@ function readGame(data) {
 function asideInit() {
     let files = fs.readdirSync(gamePath, "utf8");
     for (let f in files) {
+        if (files[f] == ".gitignore") {
+            continue;
+        }
         let data = fs.readFileSync(gamePath + "\\" + files[f], "utf8");
         updateAside(readGame(data.split("\n")));
     }
