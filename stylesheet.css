@@ -9,11 +9,14 @@
     font-size: 1.03em;
     color: white;
     user-select: none;
-}
-
-html, body, div, h1, h2, h3, h4, h5, h6 {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -44,6 +47,10 @@ select {
 
 section h1, section h2 {
     margin: 10px;
+}
+
+textarea {
+    margin: 30px;
 }
 
 input[type="radio"] {
@@ -93,8 +100,11 @@ label:hover {
 
 /* Panels: */
 .panel {
-  height: 100vh;
-  overflow: auto;
+    overflow: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
 }
 
 /* Resizing */
@@ -103,7 +113,6 @@ label:hover {
   overflow: auto;
 }
 
-/* Panel Colors */
 .aside {
     background: #151515;
     width: 25%;
@@ -147,13 +156,18 @@ label:hover {
 
 .main {
     background: #000000;
+    flex: 1;
 }
 
 /* Split View */
 .split_view {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
   width: 100%;
-  clear: both;
-  display: table;
+  backface-visibility: hidden;
+  will-change: overflow;
 }
 
 .split_view .panel {
