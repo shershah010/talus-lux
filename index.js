@@ -6,14 +6,14 @@ let win;
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ icon:'../icon_2.ico' });
+  win = new BrowserWindow({ show: false, icon:'../icon_2.ico' });
 
   // and load the index.html of the app.
   win.loadFile('index.html');
   win.maximize();
   // Open the DevTools.
   //win.webContents.openDevTools()
-
+  win.show();
   // Emitted when the window is closed.
   win.on('closed', () => {
     // Dereference the window object, usually you would store windows
