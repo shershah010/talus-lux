@@ -101,7 +101,7 @@ function tabInit() {
             break;
         }
     });
-    tabs["welcom"] = input;
+    tabs["welcome"] = input;
 }
 
 function showGamePage(game) {
@@ -142,7 +142,7 @@ function createTab(tabName) {
         }
     });
     tabs[tabName] = tabClone.querySelector("input");
-    document.querySelector(".main").prepend(tabClone);
+    document.querySelector(".tabs-here").appendChild(tabClone);
 }
 
 function createGameSection(game) {

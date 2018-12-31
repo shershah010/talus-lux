@@ -92,10 +92,10 @@ label:hover {
   cursor: pointer;
 }
 
-.main > input:checked + label {
+.main input:checked + label {
   color: var(--gold);
   border-top: 4px solid var(--gold);
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
 /* Panels: */
@@ -134,6 +134,13 @@ label:hover {
     border-width: 0px;
 }
 
+.tabs-here {
+    top: 0px;
+    position: sticky;
+    background-color: #000;
+    border-bottom: 1px solid var(--gold);
+}
+
 .roll form p {
     color: var(--gold);
 }
@@ -157,6 +164,7 @@ label:hover {
 .main {
     background: #000000;
     flex: 1;
+    padding: 0px;
 }
 
 /* Split View */
