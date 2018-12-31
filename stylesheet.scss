@@ -1,0 +1,344 @@
+// imports
+@import url('https://fonts.googleapis.com/css?family=Thasadith');
+
+//colors
+$WHITE: #fff;
+$BLACK: #000;
+$OFFBLACK: #101010;
+$LIGHT-GREY: #aaa;
+$GREY: #888;
+$GOLD: #f5b463;
+$DARK-GOLD: #fbc403;
+$RED: #f00;
+$CRIMSON: #900;
+$GREEN: #0f0;
+
+// General styles
+* {
+    box-sizing: border-box;
+    color: $WHITE;
+    font-family: 'Thasadith', sans-serif;
+    font-size: 1.03em;
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+option {
+    color: $BLACK;
+}
+
+section {
+    border-top: 1px solid $GREY;
+    display: none;
+    padding: 20px 0 0;
+
+    h1, h2 {
+        margin: 10px;
+    }
+}
+
+select {
+    color: $BLACK;
+    display: block;
+    margin-left: 50px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="text"],
+input[type="textarea"],
+input[type="number"],
+textarea {
+    color: $BLACK;
+    display: block;
+    margin: 5px;
+    margin-left: 10%;
+}
+
+input[type="submit"] {
+    background-color: $GOLD;
+    border: none;
+    margin: 15px;
+    width: 8em;
+
+    &:hover {
+        background-color: $DARK-GOLD;
+    }
+}
+
+label {
+    color: $GOLD;
+    border: 1px solid transparent;
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+ul, li {
+    cursor: default;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+// Panel styles
+
+.split_view {
+    backface-visibility: hidden;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    will-change: overflow;
+    height: 100vh;
+    width: 100%;
+}
+
+.panel {
+    display: table-cell;
+    padding: .5rem;
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    height: auto;
+}
+
+.resize_x {
+    overflow: auto;
+    resize: horizontal;
+}
+
+.aside {
+    background: $OFFBLACK;
+    border-right: 1px solid $WHITE;
+    width: 25%;
+}
+
+.aside_title {
+    padding-top: 5px;
+    text-align: center;
+}
+
+.main input:checked + label {
+  color: $GOLD;
+  border-top: 4px solid $GOLD;
+  border-bottom: 2px solid $WHITE;
+}
+
+.main {
+    background: $BLACK;
+    flex: 1;
+    padding: 0px;
+
+    .new {
+        top: 75px;
+    }
+}
+
+.roll {
+    background: $OFFBLACK;
+    border-left: 1px solid $WHITE;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 15%;
+
+    input {
+        border-width: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+
+    form p {
+        color: $GOLD;
+
+        &:nth-child(1) { opacity: 1.0; }
+        &:nth-child(2) { opacity: 0.8; }
+        &:nth-child(3) { opacity: 0.6; }
+        &:nth-child(4) { opacity: 0.4; }
+        &:nth-child(5) { opacity: 0.2; }
+        &:nth-child(6) { opacity: 0.0; }
+    }
+}
+
+// Tab styles
+
+.tabs-here {
+    background-color: $BLACK;
+    border-bottom: 1px solid $GOLD;
+    position: sticky;
+    top: 0px;
+
+    label:hover {
+        color: $DARK-GOLD;
+        cursor: pointer;
+    }
+}
+
+// Character styles
+
+.character_sheet {
+    width: 100%;
+}
+
+.player {
+    background-color: $GOLD;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    width: 200px;
+
+    &:hover {
+        background-color: $DARK-GOLD;
+    }
+}
+
+.game_list {
+    padding-left: 10px;
+
+    li {
+        margin: 3px;
+        margin-right: 10px;
+
+        &::after {
+            content: '';
+            display: block;
+            background: $WHITE;
+            transition: width .3s;
+            height: 1px;
+            width: 0%;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+.selected_player,
+.selected_player:hover {
+    background-color: $CRIMSON;
+}
+
+// Glypcon styles
+
+.delete {
+    color: $GOLD;
+    font-size: 1em;
+    vertical-align: center;
+    z-index: 2;
+
+    &:hover {
+        color: $RED;
+    }
+}
+
+.new {
+    color: $GOLD;
+    font-size: 1em;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transform: rotate(45deg);
+    z-index: 2;
+
+    &:hover {
+        color: $GREEN;
+    }
+}
+
+// Modal styles
+
+/* The Modal (background) */
+.modal {
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    overflow: auto; /* Enable scroll if needed */
+    left: 0;
+    top: 0;
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+.modal-content {
+    background-color: $BLACK;
+    border: 1px solid $GOLD;
+    color: $WHITE;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: $GOLD;
+    float: right;
+
+    &:hover, &:focus {
+        color: $RED;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+// Scrollbar styles
+
+/* width */
+::-webkit-scrollbar {
+  padding: 3px;
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $WHITE;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $LIGHT-GREY;
+
+  // Handle on hover
+  &:hover {
+      background: var(--gold);
+      width: 10px;
+      padding: 0px;
+  }
+}
+
+// Misc styles
+
+.instrc {
+    text-align: center;
+}
+
+.show_page {
+    display: block;
+}
+
+.vhack {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error {
+    border: 2px solid $RED;
+}
