@@ -101,6 +101,7 @@ function tabInit() {
             break;
         }
     });
+    tabs["welcom"] = input;
 }
 
 function showGamePage(game) {
