@@ -11,7 +11,7 @@ cd "folder (probably called talis lux)"
 npm install
 npm run package-win
 ```
-Now there should be a folder called talis lux-win32-x64. In that folder, there should be an executable called talus lux.exe. Just run that and enjoy.
+Now there should be a folder called talis lux-win32-x64. In that folder, there should be an executable called `talus lux.exe`. Just run that and enjoy.
 ## Run on any OS
 To run on any OS, you will need to change the `global.js` file. The `gamePath` and `typePath` currently have `../` in them. Remove these and you should be good. Now, do the following:
 ```
@@ -20,7 +20,7 @@ npm start
 ```
 Now, if you want to run talis lux, you are going to have to use the terminal. Sorry about that, I'll try and get that fixed.
 ## Bugs
-* The tabs might not always work as expected. Sometimes the don't get in focus when they are supposed to.
+* The tabs might not always work as expected. Sometimes they don't get in focus when they are supposed to.
 * The main content window might not always show updated information, especially when creating a new character. If this occurs, just click on the game name on the left hand screen. It should update the values.
 * The DnD game type does not work. I still need to program that.
 * The checkboxes take a few clicks to change.
