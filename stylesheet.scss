@@ -131,16 +131,16 @@ ul, li {
     text-align: center;
 }
 
-.main input:checked + label {
-  color: $GOLD;
-  border-top: 4px solid $GOLD;
-  border-bottom: 2px solid $WHITE;
-}
-
 .main {
     background: $BLACK;
     flex: 1;
     padding: 0px;
+
+    input:checked + label {
+        color: $GOLD;
+        border-top: 4px solid $GOLD;
+        border-bottom: 2px solid $WHITE;
+    }
 
     .new {
         top: 75px;
@@ -294,6 +294,80 @@ ul, li {
         color: $RED;
         cursor: pointer;
         text-decoration: none;
+    }
+}
+
+// Game Type Speific styles
+
+img {
+    width: 100%;
+}
+
+hr {
+    width: 90%;
+}
+
+.charForm {
+    padding: 10px;
+}
+
+.header {
+    font-size: 2em;
+}
+
+.container {
+    cursor: pointer;
+    display: block;
+    padding-left: 35px;
+    position: relative;
+    margin-bottom: 12px;
+    text-align: left;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input {
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark,
+        &[value="true"] ~ .checkmark {
+            background-color:  $GOLD;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    &:hover input ~ .checked {
+        background-color: $GREY;
+    }
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  background-color: $WHITE;
+  height: 25px;
+  width: 25px;
+
+  &:after {
+        content: "";
+        border: solid $WHITE;
+        border-width: 0 3px 3px 0;
+        display: none;
+        position: absolute;
+        left: 9px;
+        top: 5px;
+        transform: rotate(45deg);
+        width: 5px;
+        height: 10px;
     }
 }
 
