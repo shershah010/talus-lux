@@ -96,7 +96,6 @@ class TalesFromTheLoopGame extends Game {
         }
         let hide = data[data.length - 1].trim();
         this.setHideout(hide.substring(9, hide.length - 1));
-        console.log(this.getPlayers());
     }
 }
 
@@ -110,9 +109,15 @@ class DungeonsAndDragonsGame extends Game {
         return "Dungeons and Dragons";
     }
 
+    summary() {
+        let summary = super.summary() + "\n";
+        return summary;
+    }
+
     readFile(data) {
-        for (let line in data) {
-            console.log(data[line]);
+        for (let i = 2; i < data.length - 1; i += 1) {
+            this.addPlayer(DungeonsAndDragonsPlayer.fromFile(data[i], this));
         }
+
     }
 }

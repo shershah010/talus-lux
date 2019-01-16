@@ -361,11 +361,52 @@ class TalesFromTheLoopPlayer extends Player {
                 command = "";
             }
         }
-        console.log(commands);
         return TalesFromTheLoopPlayer.readCommands(commands, gameObj);
     }
 }
 
 class DungeonsAndDragonsPlayer extends Player {
+    constructor(name, game, lass, level, background, race, alignment, exp, attributes, perception, inspiration, proficiency, saving_throws, skills, hit_points, temp_hit_points, hit_dice, death_saves, attacks, personality, ideals, bonds, flaws, proficiencies_languages, equipment, features, apperence, backstory, treasure, allies, spellcasting, spell_save, spell_attack_bonus, spells) {
+        super(name, game);
+        this.class = lass;
+        this.level = level;
+        this.background = background;
+        this.race = race;
+        this.alignment = alignment;
+        this.exp = exp;
+        this.attributes = attributes;
+        this.perception = perception;
+        this.inspiration = inspiration;
+        this.proficiency = proficiency;
+        this.saving_throws = saving_throws;
+        this.skills = skills;
+        this.hit_points = hit_points;
+        this.temp_hit_points = temp_hit_points;
+        this.hit_dice = hit_dice;
+        this.death_saves = death_saves;
+        this.attacks = attacks
+        this.personality = personality;
+        this.ideals = ideals;
+        this.bonds = bonds;
+        this.flaws = flaws;
+        this.proficiencies_languages = proficiencies_languages;
+        this.equipment = equipment;
+        this.features = features;
+        this.apperence = apperence;
+        this.backstory = backstory;
+        this.treasure = treasure;
+        this.allies = allies;
+        this.spellcasting = spellcasting;
+        this.spell_save = spell_save;
+        this.spell_attack_bonus = spell_attack_bonus;
+        this.spells = spells;
+    }
 
+    get(key) {
+        return this[key];
+    }
+
+    set(key, value) {
+        this[key] = value;
+    }
 }

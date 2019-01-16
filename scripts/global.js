@@ -1,6 +1,6 @@
 const fs = require('fs'); // allows for file I/O
-const gamePath = "../games"; // the game path
-const typePath = "../types"; // the type path
+const gamePath = "games"; // the game path
+const typePath = "types"; // the type path
 let games = {}; // holds all the games, indexed by game name
 let tabs = {}; // holds all the open tabs (DOM object)
 let tabLevel = 1; // number of total tabs created
